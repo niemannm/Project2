@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Ask a missionary</h1>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                
+                    <img class="mission-image" src="https://media.ldscdn.org/images/media-library/scripture-study/elder-missionaries-bulgaria-1131407-wallpaper.jpg?download=true" />
+                    <div class="caption">
+                        <p>"The Lord entrusts a testimony of the truth to those who will share it with others" - Dieter F. Uchtdorf</p>
+                    </div>
+                    <div class="caption">
+                        <p>@Html.ActionLink("What will I learn?", "Mission", "Home")</p>
+                    </div>
+               
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+               
+                    <img class="mission-image" src="https://media.ldscdn.org/images/media-library/service/elder-missionaries-moving-furniture-truck-1289789-wallpaper.jpg?download=true" />
+                    <div class="caption">
+                        <p>"Know ye know that ye are in the hands of God?" - Mormon 3:5</p>
+                    </div>
+                    <div class="caption">
+                        <p>@Html.ActionLink("What will I do?", "Mission", "Home")</p>
+                    </div>
+              
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+
+                <img class="mission-image" src="https://media.ldscdn.org/images/media-library/missionary/sister-missionaries-956170-wallpaper.jpg?download=true" />
+                <div class="caption">
+                    <p>"The work of our missionaries is a magnificent expression of the Lord's redeeming love" - Elder D. Todd Christofferson</p>
+                </div>
+                <div class="caption">
+                    <p>@Html.ActionLink("Will I enjoy my mission?", "Mission", "Home")</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+   
+        
+   
+
+    <a type="button" class="btn btn-primary" href="@Url.Action("Mission", "Home")"> Get in contact with  missionary</a>
+    
+    @* <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p> *@
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Explore a Mission", "Mission", "Home")</h2>
+        <p>
+            Each mission is unique. Learn what it is like to serve in various missions around the globe!
+        </p>
+        <p></p>
+    </div>
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("About Us", "About", "Home")</h2>
+        <p>We aim to provide future missionaries the opportunity to connect with past missionaries<./p>
+        <p></p>
+    </div>
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Contact", "Contact", "Home")</h2>
+        <p>Talk to missionaries to receive answers to specific questions.</p>
+        <p></p>
+    </div>
+</div>
+
+<br />
+<br />
+
+<p class="lead">"After all that has been said, the greatest and most important duty is to preach the gospel" - Joseph Smith</p>

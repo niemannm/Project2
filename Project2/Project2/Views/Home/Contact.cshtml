@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h2>Contact Us</h2>
+
+<h3>Contact Form</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <address>
+                Unversity Ave<br />
+                Provo, UT 84601<br />
+                <abbr title="Phone">P:</abbr>
+                703-403-4040
+            </address>
+
+            <address>
+                <strong>Email:</strong>   <a href="niemannmichaeld@gmail.com">MissionMayhem@dopeness.com</a><br />
+            </address>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <form>
+                    <div class="form-group">
+                        <label for="fname">Name</label>
+                        <input class="form-control" type="text" name="name" placeholder="Your name..">
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Email</label>
+                        <input class="form-control" type="text" name="email" placeholder="Your email..">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select class="form-control">
+                            <option disabled selected>
+                                Select Subject
+                            </option>
+                            <option>
+                                Mission Life
+                            </option>
+                            <option>
+                                Mission Background
+                            </option>
+                            <option>
+                                Other
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Message</label>
+                        <textarea class="form-control" name="message" placeholder="Write something.."></textarea>
+                    </div>
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

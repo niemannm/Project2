@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Mission";
+}
+
+<h2>Select Mission</h2>
+
+
+
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Select a Mission
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="@Url.Action("Cambodia","Mission")">Phnom Peh, Cambodia</a></li>
+        <li><a class="dropdown-item" href="@Url.Action("California","Mission")">Santa Rosa, California</a></li>
+        <li><a class="dropdown-item" href="@Url.Action("Chile","Mission")">Antofagasta, Chile</a></li>
+    </ul>
+</div>

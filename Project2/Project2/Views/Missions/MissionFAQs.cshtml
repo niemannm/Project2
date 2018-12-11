@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "MissionFAQs";
+}
+
+<h2>MissionFAQs</h2>
+@* Breadcrumb navigation bar *@
+<ul class="breadcrumb">
+    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+    <li><a href="@Url.Action("Mission","Home")">Select Mission</a></li>
+    <li>@ViewBag.missionName</li>
+</ul>
+
+<h3>@ViewBag.missionName</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            @{
+                if (ViewBag.missionName == "Cambodia")
+                {
+                    <img class="flag-mission" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/255px-Flag_of_Cambodia.svg.png" />
+                }
+                else if (ViewBag.missionName == "Santa Rosa, Califonia")
+                {
+                    <img class="flag-mission" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_California.svg/1200px-Flag_of_California.svg.png" />
+                }
+                else if (ViewBag.missionName == "Chile Antofagasta")
+                {
+                    <img class="flag-mission" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/1200px-Flag_of_Chile.svg.png" />
+                }
+
+            }
+        </div>
+        <div class="col-md-6">
+            <p><b>Mission President: </b>@ViewBag.missionPresident</p>
+            <p><b>Mission Address: </b>@ViewBag.address</p>
+            <p><b>Mission Language:</b> @ViewBag.language</p>
+            <p><b>Climate: </b>@ViewBag.climate</p>
+            <p><b>Dominant Religion: </b>@ViewBag.dominantReligion</p>
+
+            <div>
+                <form>
+                    <p>Ask a question here:</p>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Name" /><br />
+                    </div>
+                    <div class="form-group">
+                        <textarea spellcheck="true" class="form-control"></textarea><br />
+                    </div>
+                        <input type="submit" value="Submit" class="btn btn-primary" placeholder="Question" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Questions:</h3>
+            <div>
+                <p><b>How many baptisms did your mission have in an average year?</b></p>
+                <p>&emsp; In @ViewBag.missionName we usually baptize 10 people each week.</p>
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Write an answer..."></textarea>
+                    </div>
+                    <input type="submit" class="btn btn-success" value="Reply"/>
+                </form>
+            </div>
+            <br />
+            <div>
+                <p><b>What is the hardest part about serving in your mission?</b></p>
+                <p>&emsp; The climate is so @ViewBag.climate, it makes trackting really hard</p>
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Write an answer..."></textarea>
+                    </div>
+                    <input type="submit" class="btn btn-success" value="Reply" />
+                </form>
+            </div>
+            <br />
+            <div>
+                <p><b>What is the best part about your mission?</b></p>
+                <p>&emsp; Serving the people is the best part. I also really love @ViewBag.missionPresident because he understands people who are @ViewBag.dominantReligion.</p>
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Write an answer..."></textarea>
+                    </div>
+                    <input type="submit" class="btn btn-success" value="Reply" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
