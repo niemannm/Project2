@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace DontHaveACoke.Controllers
+namespace Project2.Controllers
 {
     //this is the mission controller, where we show the different missions. 
     public class MissionController : Controller
@@ -16,7 +16,7 @@ namespace DontHaveACoke.Controllers
             return View("MissionFAQs");
         }
 
-    
+
         public ActionResult Cambodia()
         {
             ViewBag.missionName = "Cambodia";
@@ -25,7 +25,7 @@ namespace DontHaveACoke.Controllers
             ViewBag.language = "Khmer";
             ViewBag.climate = "hot & SWEATY";
             ViewBag.dominantReligion = "Bhuddist";
-            
+
             return View("MissionFAQs");
         }
         public ActionResult California()
