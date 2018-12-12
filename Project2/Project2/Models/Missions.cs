@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -12,34 +13,29 @@ namespace Project2.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ClientID { get; set; }
-        [Required(ErrorMessage = "Please enter your first name")]
-        [DisplayName("First Name")]
-        public string FirstName { get; set; }
-        [Required(ErrorMessage = "Please enter your last name")]
-        [DisplayName("Last Name")]
-        public string LastName { get; set; }
+        public int MissionID { get; set; }
+
+        [Required(ErrorMessage = "Please enter a mission name")]
+        [DisplayName("Mission Name")]
+        public string MissionName { get; set; }
+
+        [Required(ErrorMessage = "Please enter a mission president's name")]
+        [DisplayName("President's Name")]
+        public string PresidentName { get; set; }
 
         [Required(ErrorMessage = "Please enter an address")]
-        public string Address { get; set; }
+        public string StreetAddress { get; set; }
 
-        [Required(ErrorMessage = "Please enter your city")]
-        public string City { get; set; }
+        [Required(ErrorMessage = "Please enter a language")]
+        public string Language { get; set; }
 
-        [Required(ErrorMessage = "Please enter your state")]
-        public string State { get; set; }
+        [Required(ErrorMessage = "Please enter climate")]
+        public string Climate { get; set; }
 
-        [DisplayName("Zipcode")]
-        [RegularExpression(@"^\d{5}([\-]\d{4})?$", ErrorMessage = "Please enter a 5 digit zip code")]
-        [Required(ErrorMessage = "Please enter your zip code")]
-        public int Zip { get; set; }
-        [Required(ErrorMessage = "Please enter your email")]
+        [Required(ErrorMessage = "Please enter dominant Religion")]
+        public string DominantReligion { get; set; }
 
-        [EmailAddress(ErrorMessage = "Please enter a valid email")]
-        public string Email { get; set; }
-        [Required(ErrorMessage = "Please enter a phone number")]
-        [Phone]
-        [RegularExpression(@"^\+?\(?\d+\)?(\s|\-|\.)?\d{1,3}(\s|\-|\.)?\d{4}[\s]*[\d]*$", ErrorMessage = "Please enter a valid phone number (123) 456-7890")]
-        public string Phone { get; set; }
+        [Required(ErrorMessage = "Please enter flag img path")]
+        public string FlagImagePath { get; set; }
     }
 }
