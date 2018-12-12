@@ -7,7 +7,7 @@ using System.Web.Mvc;
 namespace Project2.Controllers
 {
     //this is the mission controller, where we show the different missions. 
-    public class MissionController : Controller
+    public class MissionsController : Controller
     {
         string mission = "";
         // GET: Mission
