@@ -16,8 +16,14 @@
     
 <div class="container">
     <h3>Questions:</h3>
+    <hr />
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-4 right">
+            @Html.ActionLink("Ask a question", "Create", "MissionQuestions", new { id = Html.Raw((int)ViewBag.MissionID) }, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             @foreach (var item in Model)
             {
                 <p><b>@Html.DisplayFor(modelItem => item.Question)</b></p>
@@ -25,9 +31,6 @@
                 @Html.ActionLink("Reply", "Reply", "MissionQuestions", new { id = Html.DisplayFor(modelItem => item.MissionQuestionID) }, new { @class = "btn btn-success" })
                 <hr />
             }
-        </div>
-        <div class="col-md-2">
-            @Html.ActionLink("Ask a question", "Create", "MissionQuestions", new { id = Html.Raw((int)ViewBag.MissionID) }, new { @class = "btn btn-primary" })
         </div>
     </div>
 </div>

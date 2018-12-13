@@ -15,7 +15,7 @@ namespace Project2.Controllers
     public class MissionQuestionsController : Controller
     {
         private MissionContext db = new MissionContext();
-
+        
         // GET: MissionQuestions
         public ActionResult Index()
         {
@@ -73,6 +73,7 @@ namespace Project2.Controllers
             ViewBag.thisMissionID = id;
             ViewBag.MissionID = new SelectList(db.Mission, "MissionID", "MissionName");
             ViewBag.UserID = new SelectList(db.User, "UserID", "UserEmail");
+
             return View();
         }
 
@@ -82,8 +83,9 @@ namespace Project2.Controllers
         {
             if (ModelState.IsValid)
             {
-                missionQuestions.MissionQuestionID = id;
-                db.Entry(missionQuestions).State = EntityState.Modified;
+                //missionQuestions.MissionQuestionID = id;
+                db.Database.ExecuteSqlCommand("UPDATE MissionQuestions SET Answer = '" + missionQuestions.Answer + "' WHERE MissionQuestionID = " + id);
+                //db.Entry(missionQuestions).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("getID", "Missions", null);
             }

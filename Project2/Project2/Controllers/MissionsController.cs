@@ -16,7 +16,7 @@ namespace Project2.Controllers
     public class MissionsController : Controller
     {
         private MissionContext db = new MissionContext();
-        public int? thisMissionID;
+        public static int? thisMissionID;
 
         // GET: Mission
         [AllowAnonymous]
