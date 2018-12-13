@@ -38,57 +38,10 @@
             <p><b>Climate: </b>@ViewBag.climate</p>
             <p><b>Dominant Religion: </b>@ViewBag.dominantReligion</p>
 
-            <div>
-                <form>
-                    <p>Ask a question here:</p>
-                    <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Name" /><br />
-                    </div>
-                    <div class="form-group">
-                        <textarea spellcheck="true" class="form-control"></textarea><br />
-                    </div>
-                    <input type="submit" value="Submit" class="btn btn-primary" placeholder="Question" />
-                </form>
-            </div>
+            @Html.ActionLink("View FAQ Page", "FAQ", "Missions", null, new { @class = "btn btn-primary" })
         </div>
     </div>
     <hr />
-    <div class="row">
-        <div class="col-md-12">
-            <h3>Questions:</h3>
-            <div>
-                <p><b>How many baptisms did your mission have in an average year?</b></p>
-                <p>&emsp; In @ViewBag.missionName we usually baptize 10 people each week.</p>
-                <form>
-                    <div class="form-group">
-                        <textarea class="form-control" placeholder="Write an answer..."></textarea>
-                    </div>
-                    <input type="submit" class="btn btn-success" value="Reply" />
-                </form>
-            </div>
-            <br />
-            <div>
-                <p><b>What is the hardest part about serving in your mission?</b></p>
-                <p>&emsp; The climate is so @ViewBag.climate, it makes trackting really hard</p>
-                <form>
-                    <div class="form-group">
-                        <textarea class="form-control" placeholder="Write an answer..."></textarea>
-                    </div>
-                    <input type="submit" class="btn btn-success" value="Reply" />
-                </form>
-            </div>
-            <br />
-            <div>
-                <p><b>What is the best part about your mission?</b></p>
-                <p>&emsp; Serving the people is the best part. I also really love @ViewBag.missionPresident because he understands people who are @ViewBag.dominantReligion.</p>
-                <form>
-                    <div class="form-group">
-                        <textarea class="form-control" placeholder="Write an answer..."></textarea>
-                    </div>
-                    <input type="submit" class="btn btn-success" value="Reply" />
-                </form>
-            </div>
-        </div>
-    </div>
+    
 </div>
 

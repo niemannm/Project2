@@ -18,9 +18,10 @@ namespace Project2.Controllers
         {
             return View();
         }
-        public ActionResult Mission()
+        public ActionResult SelectMission()
         {
-            return View("Mission");
+
+            return View("SelectMission", db.Mission.ToList());
         }
 
         public ActionResult About()
@@ -43,13 +44,16 @@ namespace Project2.Controllers
         }
 
         [HttpPost]
-        public ActionResult SignUp([Bind(Include = "UserID,UserEmail,Password,FirstName,LastName")] Users users)
+        public ActionResult SignUp([Bind(Include = "UserID,UserEmail,Password,FirstName,LastName")] Users users, bool rememberMe = false)
         {
             if (ModelState.IsValid)
             {
                 db.User.Add(users);
                 db.SaveChanges();
-                return RedirectToAction("Login");
+                FormsAuthentication.SetAuthCookie(users.UserEmail, rememberMe);
+                return RedirectToAction("Index", "Home", new { userlogin = users.UserEmail });
+
+     
             }
 
             return View(users);

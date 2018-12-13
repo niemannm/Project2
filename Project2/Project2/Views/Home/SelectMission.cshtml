@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Project2.Models.Missions>
+
+@{
+    ViewBag.Title = "SelectMission";
+}
+
+<h2>SelectMission</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Select a Mission
+        <span class="caret"></span>
+    </button> 
+    <ul class="dropdown-menu">
+
+    @foreach (var item in Model) {
+ 
+        <li><a class="dropdown-item" href="@Url.Action("Index", "Missions")">@Html.DisplayFor(modelItem => item.MissionName)</a></li>
+      
+    }
+    </ul>
+</div>
