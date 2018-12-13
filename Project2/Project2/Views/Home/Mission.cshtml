@@ -1,10 +1,9 @@
-﻿
+﻿@model IEnumerable<Project2.Models.Missions>
 @{
     ViewBag.Title = "Mission";
 }
 
-<h2>Select Mission</h2>
-
+<h2>**DO WE NEED THIS PAGE?*Select Mission</h2>
 
 
 <div class="dropdown">
@@ -13,8 +12,10 @@
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="@Url.Action("Cambodia","Missions")">Phnom Peh, Cambodia</a></li>
-        <li><a class="dropdown-item" href="@Url.Action("California","Missions")">Santa Rosa, California</a></li>
-        <li><a class="dropdown-item" href="@Url.Action("Chile","Missions")">Antofagasta, Chile</a></li>
+        @foreach (var item in Model)
+        {
+            <li><a class="dropdown-item" href="@Url.Action("Cambodia","Missions")">@Html.DisplayFor(model => item.MissionName)</a></li>
+        }
+
     </ul>
 </div>

@@ -1,47 +1,33 @@
-﻿
+﻿@model Project2.Models.Missions
 @{
     ViewBag.Title = "MissionFAQs";
 }
 
-<h2>MissionFAQs</h2>
+<h2>Mission Information</h2>
 @* Breadcrumb navigation bar *@
 <ul class="breadcrumb">
     <li><a href="@Url.Action("Index","Home")">Home</a></li>
-    <li><a href="@Url.Action("Mission","Home")">Select Mission</a></li>
-    <li>@ViewBag.missionName</li>
+    <li><a href="@Url.Action("SelectMission","Home")">Select Mission</a></li>
+    <li>@Html.DisplayFor(model => model.MissionName)</li>
 </ul>
 
-<h3>@ViewBag.missionName</h3>
+
+
+<h3>@Html.DisplayFor(model => model.MissionName)</h3>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            @{
-                if (ViewBag.missionName == "Cambodia")
-                {
-                    <img class="flag-mission" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/255px-Flag_of_Cambodia.svg.png" />
-                }
-                else if (ViewBag.missionName == "Santa Rosa, Califonia")
-                {
-                    <img class="flag-mission" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_California.svg/1200px-Flag_of_California.svg.png" />
-                }
-                else if (ViewBag.missionName == "Chile Antofagasta")
-                {
-                    <img class="flag-mission" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/1200px-Flag_of_Chile.svg.png" />
-                }
-
-            }
+            <img class="flag-mission" src="@Html.DisplayFor(model => model.FlagImagePath)" />
         </div>
         <div class="col-md-6">
-            <p><b>Mission President: </b>@ViewBag.missionPresident</p>
-            <p><b>Mission Address: </b>@ViewBag.address</p>
-            <p><b>Mission Language:</b> @ViewBag.language</p>
-            <p><b>Climate: </b>@ViewBag.climate</p>
-            <p><b>Dominant Religion: </b>@ViewBag.dominantReligion</p>
+            <p><b>Mission President: </b>@Html.DisplayFor(model => model.PresidentName)</p>
+            <p><b>Mission Address: </b>@Html.DisplayFor(model => model.StreetAddress)</p>
+            <p><b>Mission Language: </b>@Html.DisplayFor(model => model.Language)</p>
+            <p><b>Climate: </b>@Html.DisplayFor(model => model.Climate)</p>
+            <p><b>Dominant Religion: </b>@Html.DisplayFor(model => model.DominantReligion)</p>
 
-            @Html.ActionLink("View FAQ Page", "FAQ", "Missions", null, new { @class = "btn btn-primary" })
+            @Html.ActionLink("View FAQ Page", "FAQ", "Missions", new { id = Html.DisplayFor(model => model.MissionID) }, new { @class = "btn btn-primary" })
         </div>
     </div>
-    <hr />
-    
 </div>
 

@@ -23,11 +23,9 @@ namespace Project2.Models
         public int? UserID { get; set; }
         public virtual Users User { get; set; }
 
-        [Required(ErrorMessage = "Please enter a question")]
         [DisplayName("Question")]
         public string Question { get; set; }
 
-        [Required(ErrorMessage = "Please enter an answer")]
         [DisplayName("Answer")]
         public string Answer { get; set; }
     }

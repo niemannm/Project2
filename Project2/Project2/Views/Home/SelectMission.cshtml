@@ -4,11 +4,8 @@
     ViewBag.Title = "SelectMission";
 }
 
-<h2>SelectMission</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2>Select a Mission</h2>
+<hr />
 <div class="dropdown">
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
         Select a Mission
@@ -18,7 +15,7 @@
 
     @foreach (var item in Model) {
  
-        <li><a class="dropdown-item" href="@Url.Action("Index", "Missions")">@Html.DisplayFor(modelItem => item.MissionName)</a></li>
+        <li><a class="dropdown-item" href="@Url.Action("Index", "Missions", new { id = Html.DisplayFor(modelItem => item.MissionID) })">@Html.DisplayFor(modelItem => item.MissionName)</a></li>
       
     }
     </ul>

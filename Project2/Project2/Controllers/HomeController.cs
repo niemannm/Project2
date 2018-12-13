@@ -52,8 +52,6 @@ namespace Project2.Controllers
                 db.SaveChanges();
                 FormsAuthentication.SetAuthCookie(users.UserEmail, rememberMe);
                 return RedirectToAction("Index", "Home", new { userlogin = users.UserEmail });
-
-     
             }
 
             return View(users);
