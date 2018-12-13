@@ -8,14 +8,15 @@ using System.Web;
 using System.Web.Mvc;
 using Project2.DAL;
 using Project2.Models;
+using Project2.Controllers;
 
 
 namespace Project2.Controllers
-{
+{   [Authorize]
     public class MissionQuestionsController : Controller
     {
         private MissionContext db = new MissionContext();
-        
+
         // GET: MissionQuestions
         public ActionResult Index()
         {

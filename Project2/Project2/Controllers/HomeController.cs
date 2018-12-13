@@ -1,4 +1,8 @@
-﻿using Project2.DAL;
+﻿/*
+Names: Sam Gines, Michael Niemann, Taylor Bakow, Hunter Riches
+Description: Mission FAQs with questions and answers
+*/
+using Project2.DAL;
 using Project2.Models;
 using System;
 using System.Collections.Generic;
